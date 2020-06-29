@@ -50,6 +50,9 @@
     .ml-#{$i} {
         margin-left: pow(2, $i) + px;
     }
+    .mb-#{$i} {
+        margin-bottom: pow(2, $i) + px;
+    }
 }
 
 body {
