@@ -14,8 +14,8 @@ export const HomeDefault = () => {
                     Boginoo
                 </div>
                 <div className='mt-5 flex justify-center items-center'>
-                    <Input placeholder='https://www.web-huudas.mn' />
-                    <Button>Богиносгох</Button>
+                    <Input className="h-5 w-8 c-primary" placeholder='https://www.web-huudas.mn' />
+                    <Button className='font-ubuntu fs-20 lh-23 bold c-default h-5 ph-4 ml-4 b-primary' disabled={true}>Богиносгох</Button>
                 </div>
             </div>
         </Layout>
