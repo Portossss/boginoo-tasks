@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const Input = (props) => {
-    let { className, ...others } = props;
+    let { className, disabled, placeholder, type, ...others } = props;
 
     /* 
         https://boginoo.firebaseapp.com/input
@@ -22,7 +22,7 @@ export const Input = (props) => {
 
     return (
         <div>
-            <input className={`input ${className}`} {...others} />
+            <input className={`input ${className} ${disabled && 'disabled'}`} placeholder={placeholder} type={type} {...others} />
         </div>
     );
 };

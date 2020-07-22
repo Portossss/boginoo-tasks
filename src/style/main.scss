@@ -66,6 +66,11 @@ body {
 .h100 {
     height: 100%;
 }
+@for $i from 1 through 500 {
+    .width-#{$i} {
+        width: $i + px;
+    }
+}
 
 
 // ЭНЭ CSS ЯМАР УЧИРТАЙГ САЙН СУДЛАХ

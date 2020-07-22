@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomeDefault } from './pages';
+import { HomeDefault, Login, Signup, Shortened } from './pages';
 import {
     BrowserRouter as Router,
     Switch,
@@ -7,6 +7,7 @@ import {
     Link
 } from "react-router-dom";
 import './style/main.scss';
+import { Forgotpass } from './pages/forgotpass';
 
 const App = () => {
     return (
@@ -14,6 +15,18 @@ const App = () => {
             <Switch>
                 <Route path="/" exact>
                     <HomeDefault />
+                </Route>
+                <Route path="/forgotpass" exact>
+                    <Forgotpass />
+                </Route>
+                <Route path="/shortened" exact>
+                    <Shortened />
+                </Route>
+                <Route path="/login" exact>
+                    <Login />
+                </Route>
+                <Route path="/register" exact>
+                    <Signup />
                 </Route>
             </Switch>
         </Router>
