@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 
 export const Input = (props) => {
     let { className, disabled, placeholder, type, ...others } = props;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomeDefault, Login, Signup, Shortened } from './pages';
+import { HomeDefault, Login, Signup, Shortened, Forgotpass } from './pages';
 import {
     BrowserRouter as Router,
     Switch,
@@ -7,29 +7,31 @@ import {
     Link
 } from "react-router-dom";
 import './style/main.scss';
-import { Forgotpass } from './pages/forgotpass';
+import {Context} from './components/provider'
 
 const App = () => {
     return (
-        <Router>
-            <Switch>
-                <Route path="/" exact>
-                    <HomeDefault />
-                </Route>
-                <Route path="/forgotpass" exact>
-                    <Forgotpass />
-                </Route>
-                <Route path="/shortened" exact>
-                    <Shortened />
-                </Route>
-                <Route path="/login" exact>
-                    <Login />
-                </Route>
-                <Route path="/register" exact>
-                    <Signup />
-                </Route>
-            </Switch>
-        </Router>
+        <Context.Provider>
+            <Router>
+                <Switch>
+                    <Route path="/" exact>
+                        <HomeDefault />
+                    </Route>
+                    <Route path="/forgotpass" exact>
+                        <Forgotpass />
+                    </Route>
+                    <Route path="/shortened" exact>
+                        <Shortened />
+                    </Route>
+                    <Route path="/login" exact>
+                        <Login />
+                    </Route>
+                    <Route path="/register" exact>
+                        <Signup />
+                    </Route>
+                </Switch>
+            </Router>
+        </Context.Provider>
     )
 }
 

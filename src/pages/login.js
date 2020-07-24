@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Layout, Button, Input, IconDash, IconEndBracket, IconStartBracket } from '../components/';
+import { Context } from '../components/provider';
 
 export const Login = () => {
+    const {user} = useContext(Context);
+    let [mail, setMail] = useState('');
+    const getMail = (e) => {
+        setMail(e.target.value);
+    }
     return (
         <Layout>
             <div className='h100 flex flex-col'>
@@ -18,7 +24,7 @@ export const Login = () => {
                 </div>
                 <div className='mt-5 flex justify-center items-center flex-col'>
                     <div className='w-8 flex flex-start'>Цахим хаяг</div>
-                    <Input className="h-5 w-8 c-primary ph-4" placeholder='name@mail.domain' />
+                    <Input onChange={getMail} className="h-5 w-8 c-primary ph-4" placeholder='name@mail.domain' />
                 </div>
                 <div className='mt-5 flex justify-center items-center flex-col'>
                     <div className='w-8 flex flex-start'>Нууц үг</div>
@@ -26,13 +32,13 @@ export const Login = () => {
                 </div>
                 <div className='mt-5 flex justify-center items-center'>
                     <a className='c-primary'>Намайг санах</a>
-                    <a className='ml-4' href='#'>Нууц үгээ мартсан?</a>
+                    <a className='ml-4 c-primary' href='forgotpass'>Нууц үгээ мартсан?</a>
                 </div>
                 <div className='mt-5 flex justify-center items-center'>
                     <Button className='font-ubuntu fs-20 lh-23 bold c-default h-5 ph-6 b-primary '>Нэвтрэх</Button>
                 </div>
                 <div className='mt-5 flex justify-center items-center'>
-                    <a className='c-primary' href='#'>Шинэ хэрэглэгч бол энд дарна уу</a>
+                    <a className='c-primary' href='register'>Шинэ хэрэглэгч бол энд дарна уу</a>
                 </div>
             </div>
         </Layout>
